@@ -2,7 +2,8 @@
 <html lang="es-UY">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
 <title>Ps. Marisa González Silvestri · Psicóloga en Colonia y Montevideo</title>
 <meta name="description" content="Psicóloga con más de 30 años de experiencia. Atención a niños, bebés, adolescentes, adultos, adultos mayores y familias. Consultorio en Colonia del Sacramento, Montevideo (Pocitos) y atención online.">
 
@@ -37,19 +38,20 @@
     --max:1080px;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   body{
     margin:0;background:var(--bg);color:var(--ink);
     font:400 18px/1.65 "Source Sans 3",system-ui,sans-serif;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;
+    overflow-x:hidden;
   }
-  img{max-width:100%;display:block}
+  img{max-width:100%;height:auto;display:block}
   a{color:var(--accent-dark)}
   h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15;margin:0}
   h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
   h3{font-size:21px;margin-bottom:6px}
   p{margin:0 0 14px}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 max(20px,env(safe-area-inset-right)) 0 max(20px,env(safe-area-inset-left))}
   section{padding:80px 0}
   .kicker{
     font-size:14px;letter-spacing:.14em;text-transform:uppercase;
@@ -60,16 +62,37 @@
   /* ---- Encabezado ---- */
   header{
     position:sticky;top:0;z-index:20;
-    background:rgba(246,240,230,.92);backdrop-filter:blur(8px);
+    background:rgba(246,240,230,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
   .brand{font-family:"Fraunces",serif;font-size:19px;text-decoration:none;color:var(--ink)}
+  .brand{white-space:nowrap;min-width:0}
+  @media (max-width:380px){.brand{font-size:16px}}
   .brand small{display:block;font:500 12px/1 "Source Sans 3",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
   .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
   .nav ul a{color:var(--ink);text-decoration:none;font-size:16px}
   .nav ul a:hover{color:var(--accent)}
-  @media (max-width:860px){.nav ul{display:none}}
+  .menu-btn{
+    display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card);color:var(--ink);place-items:center;cursor:pointer;padding:0;
+  }
+  .menu-btn svg{width:22px;height:22px}
+  .menu-btn .i-close{display:none}
+  header.open .menu-btn .i-open{display:none}
+  header.open .menu-btn .i-close{display:block}
+  @media (max-width:860px){
+    .menu-btn{display:grid}
+    .nav ul{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;gap:0;background:var(--bg);
+      border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(60,40,20,.08);
+      padding:6px max(20px,env(safe-area-inset-left)) 12px;
+    }
+    header.open .nav ul{display:flex}
+    .nav ul a{display:block;padding:14px 0;font-size:18px;border-bottom:1px solid var(--line)}
+    .nav ul li:last-child a{border-bottom:0}
+  }
 
   /* ---- Botones ---- */
   .btn{
@@ -118,8 +141,15 @@
   .portrait-note strong{display:block;font-family:"Fraunces",serif;font-size:26px;font-weight:500;color:var(--accent)}
   @media (max-width:860px){
     .hero{padding:40px 0 64px}
-    .hero-grid{grid-template-columns:1fr;gap:36px}
-    .portrait{max-width:340px;margin:0 auto;width:100%}
+    .hero-grid{grid-template-columns:1fr;gap:28px}
+    .portrait{max-width:300px;margin:0 auto;width:100%;order:-1}
+  }
+  @media (max-width:480px){
+    .hero{padding:28px 0 56px}
+    .portrait{max-width:250px}
+    .portrait-note{left:12px;right:12px;bottom:12px;padding:10px 12px;font-size:14px}
+    .portrait-note strong{font-size:21px}
+    .hero h1{font-size:36px}
   }
 
   /* ---- Sobre mí ---- */
@@ -133,17 +163,40 @@
   @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
 
   /* ---- Áreas ---- */
-  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:36px}
-  .card{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:24px;
+  .areas-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);margin-top:40px;
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
+    background:var(--card);border-radius:var(--radius);overflow:hidden;
   }
-  .card .ico{
-    width:46px;height:46px;border-radius:12px;background:var(--sage-soft);
-    display:grid;place-items:center;margin-bottom:14px;color:var(--sage);
+  .area{
+    position:relative;padding:30px 26px 32px;
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    transition:background .2s ease;
   }
-  .card .ico svg{width:24px;height:24px}
-  .card p{color:var(--muted);font-size:16.5px;margin:0}
+  .area::before{
+    content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--accent);
+    transition:width .3s ease;
+  }
+  .area:hover{background:#FFFDF9}
+  .area:hover::before{width:100%}
+  .area-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:22px}
+  .area-ico{
+    width:52px;height:52px;border-radius:50%;flex:none;
+    display:grid;place-items:center;
+    background:#F4E6DD;color:var(--accent-dark);
+  }
+  .area-ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .area-num{font-family:"Fraunces",serif;font-size:15px;color:#B9A894;letter-spacing:.06em}
+  .area h3{font-size:20px;margin-bottom:8px}
+  .area p{color:var(--muted);font-size:16px;line-height:1.55;margin:0}
+  @media (max-width:980px){.areas-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){
+    .areas-grid{grid-template-columns:1fr}
+    .area{display:grid;grid-template-columns:52px 1fr;column-gap:16px;padding:22px 18px}
+    .area-head{margin:0;grid-row:span 2}
+    .area-num{display:none}
+    .area h3{font-size:19px;margin:2px 0 4px}
+  }
 
   /* ---- Dónde atiendo ---- */
   .places{background:var(--bg-alt)}
@@ -195,9 +248,9 @@
 
   dialog{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92vh}
   dialog::backdrop{background:rgba(30,24,20,.82)}
-  dialog img{max-height:88vh;width:auto;margin:0 auto;border-radius:4px}
+  dialog img{max-height:84vh;max-height:84dvh;width:auto;margin:0 auto;border-radius:4px}
   dialog form{text-align:center;margin-top:10px}
-  dialog .close{all:unset;cursor:pointer;color:#fff;font-size:16px;padding:8px 16px;border:1px solid rgba(255,255,255,.5);border-radius:999px}
+  dialog .close{all:unset;display:inline-block;margin:0 4px;cursor:pointer;color:#fff;font-size:16px;padding:8px 16px;border:1px solid rgba(255,255,255,.5);border-radius:999px}
 
   /* ---- Contacto ---- */
   .contact{text-align:center}
@@ -206,12 +259,13 @@
   .contact-meta{margin-top:30px;color:var(--muted);font-size:17px}
   .contact-meta a{font-weight:600}
 
-  footer{border-top:1px solid var(--line);padding:28px 0 96px;font-size:15px;color:var(--muted)}
+  footer{border-top:1px solid var(--line);padding:28px 0 calc(96px + env(safe-area-inset-bottom));font-size:15px;color:var(--muted)}
   footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 
   /* ---- Botón flotante de WhatsApp ---- */
   .wa-float{
-    position:fixed;right:18px;bottom:18px;z-index:30;
+    position:fixed;z-index:30;
+    right:calc(18px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));
     width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
     display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.2);
   }
@@ -230,8 +284,12 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#inicio">Marisa González Silvestri<small>Psicóloga</small></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
     <nav aria-label="Secciones">
-      <ul>
+      <ul id="menu">
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#areas">Áreas</a></li>
         <li><a href="#donde">Dónde atiendo</a></li>
@@ -270,7 +328,7 @@
 
       <div class="portrait">
         <img src="img/marisa.jpg" alt="Marisa González Silvestri" width="406" height="557">
-        <div class="portrait-note"><strong>34 años</strong>de trabajo con pacientes, desde 1992</div>
+        <div class="portrait-note"><strong>Desde hace 34 años</strong>acompañando pacientes de todas las edades</div>
       </div>
     </div>
   </section>
@@ -298,42 +356,47 @@
       <h2>Con quiénes trabajo</h2>
       <p class="lead">Atención para todas las edades, de forma individual, en vínculo o en familia.</p>
 
-      <div class="cards">
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M9 21v-4l-2-3 2.5-3h5L17 14l-2 3v4"/></svg></div>
+      <div class="areas-grid">
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg></span><span class="area-num">01</span></div>
           <h3>Bebés y vínculo madre‑bebé</h3>
-          <p>Psicoterapia breve en contacto madre‑bebé, de 0 a 2 años. Psicología del lactante.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M8 21l1-7-3-2 3-2h6l3 2-3 2 1 7"/></svg></div>
+          <p>Psicoterapia breve madre‑bebé, de 0 a 2 años. Psicología del lactante.</p>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></span><span class="area-num">02</span></div>
           <h3>Niños</h3>
-          <p>Atención infantil a través del juego y orientación a madres, padres y familia.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+          <p>Psicoterapia infantil a través del juego, con la participación de la familia.</p>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 10h8"/><path d="M8 18h8"/><path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span><span class="area-num">03</span></div>
           <h3>Adolescentes</h3>
-          <p>Un espacio propio para atravesar cambios, dudas y conflictos de esta etapa.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9-9.2C1.7 8.4 4 5 7.5 5c2 0 3.4 1.1 4.5 2.6C13.1 6.1 14.5 5 16.5 5 20 5 22.3 8.4 21 11.8 19 16.6 12 21 12 21z"/></svg></div>
+          <p>Un espacio propio para atravesar los cambios, dudas y conflictos de esta etapa.</p>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg></span><span class="area-num">04</span></div>
           <h3>Adultos</h3>
-          <p>Psicoterapia individual. Ansiedad, angustia, duelos, crisis y momentos de cambio.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></div>
+          <p>Psicoterapia individual: ansiedad, angustia, duelos, crisis y momentos de cambio.</p>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/></svg></span><span class="area-num">05</span></div>
           <h3>Adultos mayores</h3>
           <p>Acompañamiento en el envejecimiento. Formación en diagnóstico y abordaje de las demencias.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20a6 6 0 0 1 12 0M10 20a6 6 0 0 1 12 0"/></svg></div>
-          <h3>Familias y adicciones</h3>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="area-num">06</span></div>
+          <h3>Orientación a madres y padres</h3>
+          <p>Espacios individuales y grupales para acompañar la crianza.</p>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg></span><span class="area-num">07</span></div>
+          <h3>Adicciones y familia</h3>
           <p>Atención a personas con consumo problemático y a sus familias.</p>
-        </div>
-        <div class="card">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div>
+        </article>
+        <article class="area">
+          <div class="area-head"><span class="area-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span class="area-num">08</span></div>
           <h3>Terapia breve y focalizada</h3>
           <p>Abordajes acotados en el tiempo, centrados en un motivo de consulta concreto.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -437,7 +500,7 @@
       </div>
       <figure>
         <button type="button" id="ver-titulo" aria-label="Ampliar el título">
-          <img src="img/titulo.jpg" alt="Título de Psicóloga expedido por la Universidad de la República a Marisa Cristina González Silvestri, 15 de octubre de 1993" width="1142" height="1400" loading="lazy">
+          <img src="img/titulo.jpg" alt="Título de Psicóloga expedido por la Universidad de la República a Marisa Cristina González Silvestri, 15 de octubre de 1993" width="1599" height="1960" loading="lazy" decoding="async">
         </button>
         <figcaption>Tocá la imagen para ampliarla</figcaption>
       </figure>
@@ -478,13 +541,27 @@
 
 <dialog id="dlg-titulo" aria-label="Título ampliado">
   <img src="img/titulo.jpg" alt="Título de Psicóloga, Universidad de la República">
-  <form method="dialog"><button class="close">Cerrar</button></form>
+  <form method="dialog"><a class="close" href="img/titulo.jpg" target="_blank" rel="noopener">Ver en tamaño completo</a> <button class="close">Cerrar</button></form>
 </dialog>
 
 <script>
   const dlg = document.getElementById('dlg-titulo');
-  document.getElementById('ver-titulo').addEventListener('click', () => dlg.showModal());
+  document.getElementById('ver-titulo').addEventListener('click', () => {
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+    else window.open('img/titulo.jpg', '_blank');   // navegadores viejos sin <dialog>
+  });
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  // Menú en celulares
+  const header = document.querySelector('header');
+  const menuBtn = header.querySelector('.menu-btn');
+  const setMenu = open => {
+    header.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  menuBtn.addEventListener('click', () => setMenu(!header.classList.contains('open')));
+  header.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 </script>
 </body>
 </html>
