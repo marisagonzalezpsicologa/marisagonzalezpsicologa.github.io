@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es-UY">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ps. Marisa González Silvestri · Psicóloga en Colonia y Montevideo</title>
+<meta name="description" content="Psicóloga con más de 30 años de experiencia. Atención a niños, bebés, adolescentes, adultos, adultos mayores y familias. Consultorio en Colonia del Sacramento, Montevideo (Pocitos) y atención online.">
+
+<!-- Vista previa al compartir por WhatsApp / redes -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_UY">
+<meta property="og:title" content="Ps. Marisa González Silvestri · Psicóloga">
+<meta property="og:description" content="Más de 30 años acompañando a niños, adolescentes, adultos y familias. Colonia del Sacramento · Montevideo (Pocitos) · Online.">
+<meta property="og:url" content="https://marisagonzalezpsicologa.github.io/">
+<meta property="og:image" content="https://marisagonzalezpsicologa.github.io/img/compartir.jpg">
+<meta name="theme-color" content="#F6F0E6">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23B5654A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23FFF8EE' text-anchor='middle'%3EMG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#F6F0E6;
+    --bg-alt:#EFE6D8;
+    --card:#FFFBF5;
+    --ink:#2E2723;
+    --muted:#6B5F57;
+    --line:#E2D6C4;
+    --accent:#B5654A;      /* terracota */
+    --accent-dark:#934C35;
+    --sage:#7D8B6A;        /* verde salvia */
+    --sage-soft:#E3E6D6;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(60,40,20,.05), 0 8px 28px rgba(60,40,20,.07);
+    --max:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:400 18px/1.65 "Source Sans 3",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:var(--accent-dark)}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.15;margin:0}
+  h2{font-size:clamp(28px,4vw,38px);margin-bottom:10px}
+  h3{font-size:21px;margin-bottom:6px}
+  p{margin:0 0 14px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  section{padding:80px 0}
+  .kicker{
+    font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage);font-weight:600;margin-bottom:10px;
+  }
+  .lead{color:var(--muted);max-width:640px;font-size:19px}
+
+  /* ---- Encabezado ---- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,240,230,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:"Fraunces",serif;font-size:19px;text-decoration:none;color:var(--ink)}
+  .brand small{display:block;font:500 12px/1 "Source Sans 3",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+  .nav ul a{color:var(--ink);text-decoration:none;font-size:16px}
+  .nav ul a:hover{color:var(--accent)}
+  @media (max-width:860px){.nav ul{display:none}}
+
+  /* ---- Botones ---- */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 22px;border-radius:999px;text-decoration:none;
+    font-weight:600;font-size:17px;border:1.5px solid transparent;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-primary{background:var(--accent);color:#FFF8EE}
+  .btn-primary:hover{background:var(--accent-dark)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+  .btns{display:flex;flex-wrap:wrap;gap:12px}
+
+  /* ---- Portada ---- */
+  .hero{padding:72px 0 88px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(38px,6vw,62px);margin-bottom:18px;letter-spacing:-.01em}
+  .hero h1{margin-bottom:10px}
+  .tagline{font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);line-height:1.3;color:var(--accent);margin-bottom:22px}
+  .hero .lead{margin-bottom:28px}
+  .reg{
+    display:inline-flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;
+  }
+  .pill{
+    font-size:14px;font-weight:600;color:var(--sage);
+    background:var(--sage-soft);padding:6px 12px;border-radius:999px;
+  }
+  .portrait{
+    position:relative;aspect-ratio:4/5;border-radius:200px 200px var(--radius) var(--radius);
+    background:linear-gradient(160deg,#E9D7C3,#D9B79C);overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .portrait .mono{
+    position:absolute;inset:0;display:grid;place-items:center;
+    font-family:"Fraunces",serif;font-size:110px;color:rgba(255,248,238,.85);
+  }
+  .portrait-note{
+    position:absolute;left:18px;right:18px;bottom:18px;
+    background:var(--card);border-radius:14px;padding:14px 16px;
+    box-shadow:var(--shadow);font-size:15px;line-height:1.4;
+  }
+  .portrait-note strong{display:block;font-family:"Fraunces",serif;font-size:26px;font-weight:500;color:var(--accent)}
+  @media (max-width:860px){
+    .hero{padding:40px 0 64px}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .portrait{max-width:340px;margin:0 auto;width:100%}
+  }
+
+  /* ---- Sobre mí ---- */
+  .about{background:var(--card);border-block:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px}
+  .about blockquote{
+    margin:0;font-family:"Fraunces",serif;font-size:clamp(22px,2.6vw,28px);
+    line-height:1.35;color:var(--accent-dark);font-style:italic;
+    border-left:3px solid var(--accent);padding-left:22px;
+  }
+  @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
+
+  /* ---- Áreas ---- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-top:36px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .card .ico{
+    width:46px;height:46px;border-radius:12px;background:var(--sage-soft);
+    display:grid;place-items:center;margin-bottom:14px;color:var(--sage);
+  }
+  .card .ico svg{width:24px;height:24px}
+  .card p{color:var(--muted);font-size:16.5px;margin:0}
+
+  /* ---- Dónde atiendo ---- */
+  .places{background:var(--bg-alt)}
+  .place-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+  .place{
+    background:var(--card);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;
+  }
+  .place .tag{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .place p{color:var(--muted);font-size:16.5px}
+  .place a.more{margin-top:auto;font-weight:600;text-decoration:none}
+  .place a.more:hover{text-decoration:underline}
+  @media (max-width:860px){.place-grid{grid-template-columns:1fr}}
+
+  /* ---- Trayectoria ---- */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:36px}
+  @media (max-width:860px){.two{grid-template-columns:1fr;gap:40px}}
+  .timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+  .timeline li{position:relative;padding:0 0 26px 24px}
+  .timeline li::before{
+    content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent);
+  }
+  .timeline .when{font-size:14px;font-weight:600;color:var(--sage);letter-spacing:.04em}
+  .timeline h3{font-size:19px;margin:2px 0 4px}
+  .timeline p{color:var(--muted);font-size:16.5px;margin:0}
+  .list{list-style:none;margin:0;padding:0}
+  .list li{padding:14px 0;border-bottom:1px solid var(--line)}
+  .list li:first-child{padding-top:0}
+  .list strong{display:block;font-weight:600}
+  .list span{color:var(--muted);font-size:16px}
+
+  /* ---- Título ---- */
+  .degree{background:var(--card);border-block:1px solid var(--line)}
+  .degree-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .degree figure{margin:0 auto;max-width:360px;width:100%}
+  .degree button{
+    all:unset;cursor:zoom-in;display:block;border-radius:6px;overflow:hidden;
+    box-shadow:var(--shadow);border:1px solid var(--line);transform:rotate(-1.2deg);
+    transition:transform .2s ease;background:#fff;
+  }
+  .degree button:hover,.degree button:focus-visible{transform:rotate(0)}
+  .degree button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+  .degree figcaption{font-size:14px;color:var(--muted);margin-top:14px;text-align:center}
+  .facts{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:22px 0 0;font-size:17px}
+  .facts dt{color:var(--muted)}
+  .facts dd{margin:0;font-weight:600}
+  @media (max-width:860px){.degree-grid{grid-template-columns:1fr;gap:36px}.degree figure{max-width:320px}}
+
+  dialog{border:0;padding:0;background:transparent;max-width:min(92vw,900px);max-height:92vh}
+  dialog::backdrop{background:rgba(30,24,20,.82)}
+  dialog img{max-height:88vh;width:auto;margin:0 auto;border-radius:4px}
+  dialog form{text-align:center;margin-top:10px}
+  dialog .close{all:unset;cursor:pointer;color:#fff;font-size:16px;padding:8px 16px;border:1px solid rgba(255,255,255,.5);border-radius:999px}
+
+  /* ---- Contacto ---- */
+  .contact{text-align:center}
+  .contact .lead{margin:0 auto 30px}
+  .contact .btns{justify-content:center}
+  .contact-meta{margin-top:30px;color:var(--muted);font-size:17px}
+  .contact-meta a{font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 96px;font-size:15px;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+  /* ---- Botón flotante de WhatsApp ---- */
+  .wa-float{
+    position:fixed;right:18px;bottom:18px;z-index:30;
+    width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+    display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.2);
+  }
+  .wa-float svg{width:30px;height:30px}
+
+  @media (max-width:480px){
+    body{font-size:17px}
+    section{padding:60px 0}
+    .btns .btn{flex:1 1 100%;justify-content:center}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio">Marisa González Silvestri<small>Psicóloga</small></a>
+    <nav aria-label="Secciones">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#areas">Áreas</a></li>
+        <li><a href="#donde">Dónde atiendo</a></li>
+        <li><a href="#trayectoria">Trayectoria</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- Portada -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Psicóloga · Universidad de la República</div>
+        <h1>Marisa González Silvestri</h1>
+        <p class="tagline">Escucha y acompañamiento en cada etapa de la vida</p>
+        <div class="reg">
+          <span class="pill">Ps. Nº 1045</span>
+          <span class="pill">M.S.P. Nº 522</span>
+        </div>
+        <p class="lead">Atención psicológica a niños, bebés y sus familias, adolescentes, adultos y adultos mayores. Consultorio en Colonia del Sacramento, en Montevideo (Pocitos) y atención online.</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="https://wa.me/59899841424?text=Hola%20Marisa%2C%20me%20gustar%C3%ADa%20coordinar%20una%20consulta." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+            Escribir por WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:+59899841424">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            099 841 424
+          </a>
+        </div>
+      </div>
+
+      <div class="portrait">
+        <img src="img/marisa.jpg" alt="Marisa González Silvestri" width="406" height="557">
+        <div class="portrait-note"><strong>34 años</strong>de trabajo con pacientes, desde 1992</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="about" id="sobre-mi">
+    <div class="wrap about-grid">
+      <div>
+        <div class="kicker">Sobre mí</div>
+        <h2>Un espacio de confianza</h2>
+      </div>
+      <div>
+        <p>Hola, soy Marisa González. Trabajo con pacientes desde 1992 y soy psicóloga egresada de la Universidad de la República desde 1993. Son 34 años acompañando a niños, adolescentes, adultos y madres con sus bebés.</p>
+        <p>Me especialicé en psicoterapia breve madre‑bebé y en terapia focalizada. Trabajé en consulta privada y también en instituciones como la Fundación Manantiales y los centros CAIF.</p>
+        <p>Gran parte de mi recorrido fue junto a personas y familias de bajos recursos, una experiencia que me enseñó a escuchar a cada uno desde su propia realidad. Hoy mi consulta está abierta a todas las personas que busquen un espacio de escucha, sin importar su edad, su historia o su situación.</p>
+        <blockquote>Cada persona llega con su propia historia. Mi trabajo es ofrecer un espacio cálido y respetuoso para escucharla.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas -->
+  <section id="areas">
+    <div class="wrap">
+      <div class="kicker">Áreas de atención</div>
+      <h2>Con quiénes trabajo</h2>
+      <p class="lead">Atención para todas las edades, de forma individual, en vínculo o en familia.</p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M9 21v-4l-2-3 2.5-3h5L17 14l-2 3v4"/></svg></div>
+          <h3>Bebés y vínculo madre‑bebé</h3>
+          <p>Psicoterapia breve en contacto madre‑bebé, de 0 a 2 años. Psicología del lactante.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M8 21l1-7-3-2 3-2h6l3 2-3 2 1 7"/></svg></div>
+          <h3>Niños</h3>
+          <p>Atención infantil a través del juego y orientación a madres, padres y familia.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></div>
+          <h3>Adolescentes</h3>
+          <p>Un espacio propio para atravesar cambios, dudas y conflictos de esta etapa.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9-9.2C1.7 8.4 4 5 7.5 5c2 0 3.4 1.1 4.5 2.6C13.1 6.1 14.5 5 16.5 5 20 5 22.3 8.4 21 11.8 19 16.6 12 21 12 21z"/></svg></div>
+          <h3>Adultos</h3>
+          <p>Psicoterapia individual. Ansiedad, angustia, duelos, crisis y momentos de cambio.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Adultos mayores</h3>
+          <p>Acompañamiento en el envejecimiento. Formación en diagnóstico y abordaje de las demencias.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20a6 6 0 0 1 12 0M10 20a6 6 0 0 1 12 0"/></svg></div>
+          <h3>Familias y adicciones</h3>
+          <p>Atención a personas con consumo problemático y a sus familias.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div>
+          <h3>Terapia breve y focalizada</h3>
+          <p>Abordajes acotados en el tiempo, centrados en un motivo de consulta concreto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dónde atiendo -->
+  <section class="places" id="donde">
+    <div class="wrap">
+      <div class="kicker">Modalidades</div>
+      <h2>Dónde atiendo</h2>
+      <p class="lead">Consulta presencial en Colonia y Montevideo, o por videollamada desde cualquier lugar. Atención particular.</p>
+
+      <div class="place-grid">
+        <div class="place">
+          <div class="tag">Presencial</div>
+          <h3>Colonia del Sacramento</h3>
+          <p>Consultorio en Las Calandrias 598 bis.</p>
+          <a class="more" href="https://www.google.com/maps/search/?api=1&query=Las+Calandrias+598+bis,+Colonia+del+Sacramento,+Uruguay" target="_blank" rel="noopener">Ver en el mapa →</a>
+        </div>
+        <div class="place">
+          <div class="tag">Presencial</div>
+          <h3>Montevideo</h3>
+          <p>Consultorio en Pocitos. Dirección exacta al coordinar la consulta.</p>
+          <a class="more" href="#contacto">Coordinar →</a>
+        </div>
+        <div class="place">
+          <div class="tag">Online</div>
+          <h3>Videollamada</h3>
+          <p>Sesiones a distancia, para quienes viven lejos o prefieren atenderse desde su casa.</p>
+          <a class="more" href="#contacto">Coordinar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trayectoria y formación -->
+  <section id="trayectoria">
+    <div class="wrap">
+      <div class="kicker">Trayectoria</div>
+      <h2>Experiencia y formación</h2>
+
+      <div class="two">
+        <div>
+          <h3 style="margin-bottom:22px">Experiencia</h3>
+          <ul class="timeline">
+            <li>
+              <div class="when">1993 – hoy</div>
+              <h3>Consulta particular</h3>
+              <p>Atención a pacientes en Montevideo, Maldonado y Colonia.</p>
+            </li>
+            <li>
+              <div class="when">2021</div>
+              <h3>CAIF Los Sabalitos, Juan Lacaze</h3>
+              <p>Suplencia como psicóloga.</p>
+            </li>
+            <li>
+              <div class="when">2012 – 2014</div>
+              <h3>Fundación Manantiales</h3>
+              <p>Atención a pacientes con adicciones y a sus familias.</p>
+            </li>
+            <li>
+              <div class="when">2004 – 2012</div>
+              <h3>Clínica Narayan</h3>
+              <p>Psicóloga e instructora de yoga.</p>
+            </li>
+            <li>
+              <div class="when">1993 – 2002</div>
+              <h3>Parroquia de los Vascos, Montevideo</h3>
+              <p>Psicóloga honoraria. Atención a niños, adolescentes, adultos y adultos mayores de bajos recursos.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom:22px">Formación complementaria</h3>
+          <ul class="list">
+            <li><strong>Psicología del Lactante y Psicoterapia</strong><span>Asociación Uruguaya de Psicoterapia Psicoanalítica · 2000</span></li>
+            <li><strong>Psicoterapia breve Madre‑Bebé</strong><span>Instituto Ágora, Psic. Denis Deffey · 1994–1996</span></li>
+            <li><strong>Terapia Focalizada</strong><span>Instituto Ágora, Psic. Denis Deffey · 1992</span></li>
+            <li><strong>Las Demencias: diagnóstico y tratamiento</strong><span>Asociación Española Primera en Socorros Mutuos · 1993</span></li>
+            <li><strong>Taller “Juego y Utopía”</strong><span>Lic. Susana Goldstein · 1993</span></li>
+            <li><strong>Programación Neurolingüística</strong><span>Edgardo Martínez Zimarioff · 2008–2010</span></li>
+            <li><strong>Coaching Profesional</strong><span>Mabel Aguilar y Carlos Servián · 2008–2010</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Título -->
+  <section class="degree" id="titulo">
+    <div class="wrap degree-grid">
+      <div>
+        <div class="kicker">Título habilitante</div>
+        <h2>Psicóloga, Universidad de la República</h2>
+        <p class="lead">Formada en el Instituto de Psicología de la Universidad de la República (hoy Facultad de Psicología), con registro en el Ministerio de Salud Pública.</p>
+        <dl class="facts">
+          <dt>Título</dt><dd>Psicóloga</dd>
+          <dt>Expedido</dt><dd>15 de octubre de 1993, Montevideo</dd>
+          <dt>Registro</dt><dd>Ps. Nº 1045 · M.S.P. Nº 522</dd>
+        </dl>
+      </div>
+      <figure>
+        <button type="button" id="ver-titulo" aria-label="Ampliar el título">
+          <img src="img/titulo.jpg" alt="Título de Psicóloga expedido por la Universidad de la República a Marisa Cristina González Silvestri, 15 de octubre de 1993" width="1142" height="1400" loading="lazy">
+        </button>
+        <figcaption>Tocá la imagen para ampliarla</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contact" id="contacto">
+    <div class="wrap">
+      <div class="kicker">Contacto</div>
+      <h2>Coordiná una consulta</h2>
+      <p class="lead">Escribime por WhatsApp o llamame y coordinamos día, horario y modalidad.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="https://wa.me/59899841424?text=Hola%20Marisa%2C%20me%20gustar%C3%ADa%20coordinar%20una%20consulta." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+          WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+59899841424">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Llamar al 099 841 424
+        </a>
+      </div>
+      <p class="contact-meta">Correo: <a href="mailto:mjn3@adinet.com.uy">mjn3@adinet.com.uy</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Ps. Marisa González Silvestri · Ps. Nº 1045 · M.S.P. Nº 522</span>
+    <span>Colonia del Sacramento · Montevideo · Online</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/59899841424?text=Hola%20Marisa%2C%20me%20gustar%C3%ADa%20coordinar%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4.9 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2 0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.4z"/></svg>
+</a>
+
+<dialog id="dlg-titulo" aria-label="Título ampliado">
+  <img src="img/titulo.jpg" alt="Título de Psicóloga, Universidad de la República">
+  <form method="dialog"><button class="close">Cerrar</button></form>
+</dialog>
+
+<script>
+  const dlg = document.getElementById('dlg-titulo');
+  document.getElementById('ver-titulo').addEventListener('click', () => dlg.showModal());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+</script>
+</body>
+</html>
